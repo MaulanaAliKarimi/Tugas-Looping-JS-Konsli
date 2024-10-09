@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <body>
+        <h1>Untuk melihat nota hasil top up</h1>
+        <h2>Klik Kanan >> Inspect >> console >> array</h2>
+        <script>
+        let nota = [] 
+        let continueLoop;
+            do {                
+                let game = prompt("Pilihan Game: Mobile-Legend, Free Fire, PUBG, Honor Of Kings");
+                let username = prompt("Masukkan Username");
+                let id = prompt("masukkan id");
+                id = parseInt(id)
+                let diamond = prompt("Masukkan Jumlah diamond");
+                diamond = parseInt(diamond);
+                let hargaperdiamond = (250)
+                hargaperdiamond = parseFloat (hargaperdiamond);
+                let jumlahtotal = diamond * hargaperdiamond;
+                jumlahtotal = parseInt (jumlahtotal);
+                nota.push({
+                    'Game': game,
+                    'Username': username,
+                    'Id': id,
+                    'jumlah diamond': diamond,
+                    'Harga Per Diamond': hargaperdiamond,
+                    'total' : jumlahtotal
+                });
+                console.table(nota);
+                continueLoop = prompt("Apakah Anda Ingin Top up lagi? (yes/no): ")
+            } while (continueLoop.toLowerCase() === 'yes');
+            console.log("proses top-up selesai");
+        </script>
+    </body>
+</html>
